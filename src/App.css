@@ -1,0 +1,33 @@
+section {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.fixed-action-btn {
+	bottom: 20px;
+	right: 20px;
+}
+section {
+	margin-top: 10px;
+	margin-bottom: 0px;
+}
+
+.section-title {
+	padding-bottom: 3%;
+	padding-top: 5%;
+}
+
+body {
+	background-color: #8b8b8b;
+	font-family: "Lato", arial, sans-serif;
+}
+.lockImage {
+	background: url("../public/Images/Bg-image.jpg");
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	height: 100vb;
+}
+
+
