@@ -4,7 +4,7 @@ import "./SignupPage.css";
 import M from "materialize-css";
 import { BackEndSignupURL } from "../StaticInformation/UrlLinkInfo";
 import { useNavigate } from "react-router-dom";
-
+import MyCanvas from "../MyCanvas/MyCanvas";
 const SignupPage = (props) => {
 	let navigate = useNavigate();
 	const [alertMessage, SetAlertMessage] = useState(false);
@@ -12,58 +12,7 @@ const SignupPage = (props) => {
 	const [startTimer, SetStartTimer] = useState(false);
 	const Sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 	const [formData, setFormData] = useState({ Password: "" });
-	const [randNumbers, SetRandNumbers] = useState([]);
-	const generateRandomNumbers = () => {
-		const numbers = Array.from({ length: 100 }, (_, i) => i + 1);
-		for (let i = numbers.length - 1; i > 0; i--) {
-			const j = Math.floor(Math.random() * (i + 1));
-			[numbers[i], numbers[j]] = [numbers[j], numbers[i]];
-		}
-		return numbers;
-	};
 
-	const generateImageGrid = () => {
-		const source = "Images/icons/";
-		let table = [];
-		const gridSize = 10;
-		let count = 0;
-		for (let i = 0; i < gridSize; i++) {
-			let row = [];
-			for (let k = 0; k < gridSize; k++) {
-				row.push(
-					<td key={k}>
-						<img
-							id={"image-" + randNumbers[count]}
-							className="responsive-img"
-							src={`${source}${randNumbers[count]}.jpg`}
-							alt={`Icon ${count}`}
-							onClick={handleClickImage}
-						/>
-					</td>
-				);
-				count += 1;
-			}
-			table.push(<tr key={i}>{row}</tr>);
-		}
-
-		return (
-			<table className="centered">
-				<tbody>{table}</tbody>
-			</table>
-		);
-	};
-
-	const handleClickImage = (event) => {
-		event.preventDefault();
-		let labelClass = document.getElementById("Password_label");
-		if (!labelClass.className.includes("active")) {
-			labelClass.className = labelClass.className + " active";
-		}
-		setFormData({
-			...formData,
-			["Password"]: formData["Password"] + ";" + event.target.id,
-		});
-	};
 	const handleChange = (event) => {
 		event.preventDefault();
 
@@ -73,17 +22,6 @@ const SignupPage = (props) => {
 		});
 	};
 
-	const handleClearPassword = (event) => {
-		event.preventDefault();
-		let labelClass = document.getElementById("Password_label");
-		if (labelClass.className.includes("active")) {
-			labelClass.className = "black-text";
-		}
-		setFormData({
-			...formData,
-			["Password"]: "",
-		});
-	};
 	const handleClearForm = (event) => {
 		event.preventDefault();
 		window.location.reload();
@@ -122,9 +60,6 @@ const SignupPage = (props) => {
 			}
 		);
 	};
-	useEffect(() => {
-		SetRandNumbers(generateRandomNumbers());
-	}, []);
 
 	useEffect(() => {
 		async function TimeLeft() {
@@ -143,6 +78,9 @@ const SignupPage = (props) => {
 
 	return (
 		<div className="row">
+			<div className="col s6 lockImage ">
+				<div className=" center"></div>
+			</div>
 			<div className="col s6 application">
 				<div className="center">
 					<h3 className="heading">Sign up</h3>
@@ -215,32 +153,7 @@ const SignupPage = (props) => {
 									</label>
 								</div>
 							</div>
-							<div className="row">
-								<div className="input-field col s12 m10">
-									<input
-										type="password"
-										name="Password"
-										id="Password"
-										readOnly
-										required
-										value={formData["Password"]}
-									/>
-									<label
-										htmlFor="Password"
-										id="Password_label"
-										className="black-text">
-										Choose your Password Images form right
-									</label>
-									<span id="_Password" className="red-text"></span>
-								</div>
-								<div className="input-field  col s12 m2">
-									<button
-										className="waves-effect waves-light btn "
-										onClick={handleClearPassword}>
-										clear
-									</button>
-								</div>
-							</div>
+							<MyCanvas></MyCanvas>
 							<div className="row">
 								<div className="col s6">
 									<button
@@ -265,14 +178,7 @@ const SignupPage = (props) => {
 					</div>
 				</div>
 			</div>
-			<div className="col s6 lockImage ">
-				<div className=" center">
-					<h4 className="orange-text heading">
-						Select images in a sequence, which will be your Password
-					</h4>
-					<div className="container">{generateImageGrid()}</div>
-				</div>
-			</div>
+
 			<div id="modalAlert" className="modal open">
 				<div className="modal-content">
 					<h4 className="title-div">{alertMessage}</h4>
