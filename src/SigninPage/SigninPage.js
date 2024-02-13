@@ -8,21 +8,16 @@ const SigninPage = (props) => {
 	const [timer, ChangeTimer] = useState(10);
 	const [startTimer, SetStartTimer] = useState(false);
 	const Sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-	const [formData, setFormData] = useState({ Password: "" });
-
+	const [formData, setFormData] = useState({ });
 	const [alertMessage, SetAlertMessage] = useState("");
-	
 	const handleChange = (event) => {
 		event.preventDefault();
-
 		setFormData({
 			...formData,
 			[event.target.name]: event.target.value,
 		});
 	};
 
-	
 	const handleClearForm = (event) => {
 		event.preventDefault();
 		window.location.reload();
@@ -40,6 +35,7 @@ const SigninPage = (props) => {
 
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		console.log(formData);
 		let email = {
 			method: "post",
 			contentType: "application/json",
@@ -49,9 +45,9 @@ const SigninPage = (props) => {
 		await axios(email).then(
 			(res) => {
 				if (res.data.success) {
-					ShowAlert("You have been successfully Logged into our systems.", true);
+					ShowAlert("You have been successfully Logged into our systems. Your Similiarity scores are: " + res.data.match , true);
 				} else {
-					ShowAlert(res.data.error, false);
+					ShowAlert("Password doesn't match please try again. " + res.data.error, false);
 				}
 			},
 			(error) => {
@@ -59,7 +55,6 @@ const SigninPage = (props) => {
 			}
 		);
 	};
-	
 
 	useEffect(() => {
 		async function TimeLeft() {
@@ -101,7 +96,7 @@ const SigninPage = (props) => {
 									<span id="_Uname" className="red-text"></span>
 								</div>
 							</div>
-							<MyCanvas></MyCanvas>
+							<MyCanvas formData={formData} setFormData={setFormData}></MyCanvas>
 
 							<div className="row">
 								<div className="col s6">
@@ -127,7 +122,7 @@ const SigninPage = (props) => {
 					</div>
 				</div>
 			</div>
-			
+
 			<div id="modalAlert" className="modal open ">
 				<div className="modal-content ">
 					<h4 className="title-div">

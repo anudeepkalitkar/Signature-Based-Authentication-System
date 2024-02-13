@@ -11,8 +11,7 @@ const SignupPage = (props) => {
 	const [timer, ChangeTimer] = useState(10);
 	const [startTimer, SetStartTimer] = useState(false);
 	const Sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-	const [formData, setFormData] = useState({ Password: "" });
-
+	const [formData, setFormData] = useState({});
 	const handleChange = (event) => {
 		event.preventDefault();
 
@@ -38,6 +37,7 @@ const SignupPage = (props) => {
 	};
 	const handleSubmit = async (e) => {
 		e.preventDefault();
+		console.log(formData);
 		let email = {
 			method: "post",
 			contentType: "application/json",
@@ -153,7 +153,7 @@ const SignupPage = (props) => {
 									</label>
 								</div>
 							</div>
-							<MyCanvas></MyCanvas>
+							<MyCanvas formData={formData} setFormData={setFormData}></MyCanvas>
 							<div className="row">
 								<div className="col s6">
 									<button
