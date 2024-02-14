@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Image-Based-Authentication-System-Signature/static/css/main.1c575cb1.css",
+    "main.js": "/Image-Based-Authentication-System-Signature/static/js/main.fe99a075.js",
+    "static/js/592.b665f479.chunk.js": "/Image-Based-Authentication-System-Signature/static/js/592.b665f479.chunk.js",
+    "static/media/Bg-image.jpg": "/Image-Based-Authentication-System-Signature/static/media/Bg-image.2692f8fce221aaac0e94.jpg",
+    "index.html": "/Image-Based-Authentication-System-Signature/index.html",
+    "main.1c575cb1.css.map": "/Image-Based-Authentication-System-Signature/static/css/main.1c575cb1.css.map",
+    "main.fe99a075.js.map": "/Image-Based-Authentication-System-Signature/static/js/main.fe99a075.js.map",
+    "592.b665f479.chunk.js.map": "/Image-Based-Authentication-System-Signature/static/js/592.b665f479.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1c575cb1.css",
+    "static/js/main.fe99a075.js"
+  ]
+}
