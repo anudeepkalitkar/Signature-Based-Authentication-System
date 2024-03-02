@@ -77,106 +77,96 @@ const SignupPage = (props) => {
 	}, [timer, startTimer]);
 
 	return (
-		<div className="row">
-			<div className="col s6 lockImage ">
-				<div className=" center"></div>
-			</div>
-			<div className="col s6 application">
-				<div className="center">
-					<h3 className="heading">Sign up</h3>
-					<div className="container">
-						<form onSubmit={handleSubmit}>
-							<div className="row">
-								<div className="input-field col s12 m6">
-									<input
-										type="text"
-										name="Fname"
-										id="Fname"
-										required
-										onChange={handleChange}
-									/>
-									<label htmlFor="Fname" className="black-text">
-										First Name
-									</label>
-									<span id="_Fname" className="red-text"></span>
-								</div>
-								<div className="input-field col s12 m6">
-									<input
-										type="text"
-										name="Lname"
-										id="Lname"
-										required
-										onChange={handleChange}
-									/>
+		<div className="center">
+			<h3 className="heading">Sign up</h3>
+			<div className="container">
+				<form onSubmit={handleSubmit}>
+					<div className="row">
+						<div className="input-field col s12 m6">
+							<input
+								type="text"
+								name="Fname"
+								id="Fname"
+								required
+								onChange={handleChange}
+							/>
+							<label htmlFor="Fname" className="black-text">
+								First Name
+							</label>
+							<span id="_Fname" className="red-text"></span>
+						</div>
+						<div className="input-field col s12 m6">
+							<input
+								type="text"
+								name="Lname"
+								id="Lname"
+								required
+								onChange={handleChange}
+							/>
 
-									<label htmlFor="Lname" className="black-text">
-										Last Name
-									</label>
-									<span id="_Lname" className="red-text"></span>
-								</div>
+							<label htmlFor="Lname" className="black-text">
+								Last Name
+							</label>
+							<span id="_Lname" className="red-text"></span>
+						</div>
 
-								<div className="input-field col s12 m12">
-									<input
-										type="text"
-										name="Uname"
-										id="Uname"
-										required
-										onChange={handleChange}
-									/>
-									<label htmlFor="Uname" className="black-text">
-										UserName
-									</label>
-									<span id="_Uname" className="red-text"></span>
-								</div>
-								<div className="input-field  col s12 ">
-									<input
-										type="email"
-										name="Email"
-										id="Email"
-										required
-										onChange={handleChange}
-									/>
-									<label htmlFor="Email" className="black-text">
-										Email
-									</label>
-									<span id="_Email" className="red-text"></span>
-								</div>
-								<div className="input-field  col s12 m12">
-									<input
-										type="text"
-										name="Phno"
-										id="Phno"
-										onChange={handleChange}
-									/>
-									<label htmlFor="phno" className="black-text">
-										Phone Number (Optional)
-									</label>
-								</div>
-							</div>
-							<MyCanvas formData={formData} setFormData={setFormData}></MyCanvas>
-							<div className="row">
-								<div className="col s6">
-									<button
-										className="btn waves-effect waves-light green "
-										type="submit"
-										id="submit"
-										name="submit">
-										Submit
-										<i className="material-icons right">send</i>
-									</button>
-								</div>
-								<div className="col s6">
-									<button
-										className="btn waves-effect waves-light red"
-										onClick={handleClearForm}>
-										Clear Form
-										<i className="material-icons right">clear_all</i>
-									</button>
-								</div>
-							</div>
-						</form>
+						<div className="input-field col s12 m12">
+							<input
+								type="text"
+								name="Uname"
+								id="Uname"
+								required
+								onChange={handleChange}
+							/>
+							<label htmlFor="Uname" className="black-text">
+								UserName
+							</label>
+							<span id="_Uname" className="red-text"></span>
+						</div>
+						<div className="input-field  col s12 ">
+							<input
+								type="email"
+								name="Email"
+								id="Email"
+								required
+								onChange={handleChange}
+							/>
+							<label htmlFor="Email" className="black-text">
+								Email
+							</label>
+							<span id="_Email" className="red-text"></span>
+						</div>
+						{/* <div className="input-field  col s12 m12">
+							<input type="text" name="Phno" id="Phno" onChange={handleChange} />
+							<label htmlFor="phno" className="black-text">
+								Phone Number (Optional)
+							</label>
+						</div> */}
 					</div>
-				</div>
+					<div className="canvas">
+						<MyCanvas formData={formData} setFormData={setFormData}></MyCanvas>
+					</div>
+					<div className="row">
+						<div className="col s6">
+							<button
+								className="btn waves-effect waves-light green "
+								type="submit"
+								id="submit"
+								name="submit">
+								Submit
+								<i className="material-icons right">send</i>
+							</button>
+						</div>
+						<div className="col s6">
+							<button
+								className="btn waves-effect waves-light red"
+								onClick={handleClearForm}>
+								Clear Form
+								<i className="material-icons right">clear_all</i>
+							</button>
+						</div>
+					</div>
+				</form>
 			</div>
 
 			<div id="modalAlert" className="modal open">

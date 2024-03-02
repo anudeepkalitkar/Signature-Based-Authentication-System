@@ -8,7 +8,7 @@ const SigninPage = (props) => {
 	const [timer, ChangeTimer] = useState(10);
 	const [startTimer, SetStartTimer] = useState(false);
 	const Sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-	const [formData, setFormData] = useState({ });
+	const [formData, setFormData] = useState({});
 	const [alertMessage, SetAlertMessage] = useState("");
 	const handleChange = (event) => {
 		event.preventDefault();
@@ -45,7 +45,11 @@ const SigninPage = (props) => {
 		await axios(email).then(
 			(res) => {
 				if (res.data.success) {
-					ShowAlert("You have been successfully Logged into our systems. Your Similiarity scores are: " + res.data.match , true);
+					ShowAlert(
+						"You have been successfully Logged into our systems. Your Similiarity scores are: " +
+							res.data.match,
+						true
+					);
 				} else {
 					ShowAlert("Password doesn't match please try again. " + res.data.error, false);
 				}
@@ -72,55 +76,49 @@ const SigninPage = (props) => {
 	}, [timer, startTimer]);
 
 	return (
-		<div className="row">
-			<div className="col s6 lockImage ">
-				<div className=" center"></div>
-			</div>
-			<div className="col s6 application">
-				<div className="center">
-					<h3 className="heading">Sign In</h3>
-					<div className="container">
-						<form onSubmit={handleSubmit}>
-							<div className="row">
-								<div className="input-field col s12 m12">
-									<input
-										type="text"
-										name="Uname"
-										id="Uname"
-										required
-										onChange={handleChange}
-									/>
-									<label htmlFor="Uname" className="black-text">
-										UserName
-									</label>
-									<span id="_Uname" className="red-text"></span>
-								</div>
-							</div>
-							<MyCanvas formData={formData} setFormData={setFormData}></MyCanvas>
-
-							<div className="row">
-								<div className="col s6">
-									<button
-										className="btn waves-effect waves-light green "
-										type="submit"
-										id="submit"
-										name="submit">
-										Submit
-										<i className="material-icons right">send</i>
-									</button>
-								</div>
-								<div className="col s6">
-									<button
-										className="btn waves-effect waves-light red"
-										onClick={handleClearForm}>
-										Clear Form
-										<i className="material-icons right">clear_all</i>
-									</button>
-								</div>
-							</div>
-						</form>
+		<div className="center">
+			<h3 className="heading">Sign In</h3>
+			<div className="container">
+				<form onSubmit={handleSubmit}>
+					<div className="row">
+						<div className="input-field col s12 m12">
+							<input
+								type="text"
+								name="Uname"
+								id="Uname"
+								required
+								onChange={handleChange}
+							/>
+							<label htmlFor="Uname" className="black-text">
+								UserName
+							</label>
+							<span id="_Uname" className="red-text"></span>
+						</div>
 					</div>
-				</div>
+					<div className="canvas">
+						<MyCanvas formData={formData} setFormData={setFormData}></MyCanvas>
+					</div>
+					<div className="row">
+						<div className="col s6">
+							<button
+								className="btn waves-effect waves-light green "
+								type="submit"
+								id="submit"
+								name="submit">
+								Submit
+								<i className="material-icons right">send</i>
+							</button>
+						</div>
+						<div className="col s6">
+							<button
+								className="btn waves-effect waves-light red"
+								onClick={handleClearForm}>
+								Clear Form
+								<i className="material-icons right">clear_all</i>
+							</button>
+						</div>
+					</div>
+				</form>
 			</div>
 
 			<div id="modalAlert" className="modal open ">

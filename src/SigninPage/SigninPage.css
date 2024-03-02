@@ -1,7 +1,8 @@
-td{
-    padding: 1% !important;
-}
 .heading{
     padding-bottom: 1%;
     font-weight: bolder;
+}
+.canvas{
+    padding-top: 1%;
+    padding-bottom: 5%;
 }

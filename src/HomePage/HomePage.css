@@ -1,9 +1,11 @@
+.project-title{
+	margin-top: 35vb;
+	font-weight: bolder;
+}
 .intro-desc {
 	word-spacing: 5px;
 	line-height: 1.5;
 	padding-bottom: 2vb;
+
 }
-.project-title{
-	margin-top: 40vb;
-	font-weight: bolder;
-}
+

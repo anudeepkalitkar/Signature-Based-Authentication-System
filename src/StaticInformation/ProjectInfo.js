@@ -1,38 +1,40 @@
 const ProjectInfo = {
-	title: "Image Based Authentication System",
-	coverImage: "Images/IBAS-Icons.jpg",
-	intro: "Break away from the constraints of traditional alphanumeric passwords, checkout this  novel, intuitive way for users to secure their credentials. ",
-	description: `Existing System:
-		The landscape of digital authentication has been predominantly dominated by the standard email-password combination. Some platforms have ventured into advanced mechanisms like biometrics or smart cards. However, while they do offer heightened security, concerns arise:
+	title: "Signature Based Authentication System",
+	coverImage: "Images/SBAS.webp",
+	intro: `Navigating a transformative shift in the world of digital authentication, the Image Similarity Based Authentication System presents an innovative paradigm. This system permits users to authenticate themselves by drawing an image, which is then cross-verified with their registration sketch, completely bypassing the need for traditional text-based passwords. Marrying the strengths of visual memory with modern tech, the system leverages HTML, CSS, and JS for its frontend, while Python, augmented with OpenCV, powers the backend.`,
+		description: `Existing System:
+		Predominantly, the digital authentication world relies heavily on the conventional duo of email and password. While some avant-garde platforms have dabbled with biometrics and smart cards, they come with their own set of challenges:
 
-		Cost Implications: Implementing biometrics or smart card authentication often requires specialized hardware or software, escalating the overall costs.
+		Cost Implications: Biometrics or smart card solutions often entail specialized hardware or software, raising affordability and feasibility concerns.
 
-		Usability and Affordability: While these systems are technologically advanced, their everyday practicality and accessibility for the average user remain in question. Not everyone might have access to the required devices or find them convenient.
+		Everyday Usability: Although technologically superior, the day-to-day practicality and accessibility for general users of such advanced systems remain questionable.
 
-		Proposed Image-Based Authentication System:
-		This system is an innovative leap, shifting the paradigm of authentication:
+		Proposed Image Similarity Based Authentication System:
+		Stepping away from convention, this system introduces a fresh, user-centric approach to digital security:
 
-		Visual Grid of Images:
+		Canvas for User’s Unique Mark:
 
-		During the registration or setup phase, users are presented with a grid filled with predetermined images or icons. Depending on the implementation, this could be a 10x10 grid or four 5x5 grids.
-		A diverse array of image sets are utilized, ranging from common icons to mnemonic symbols and even Telugu alphabets, catering to a broad user base.
-		Image Sequence as Password:
+		On registration, users are greeted with a canvas, a space dedicated for them to craft a personal doodle or sketch.
+		Conversion and Encryption:
 
-		Users authenticate themselves by selecting a specific sequence of images from the grid. This sequence, while intuitive for the user to remember, acts as their unique "password."
-		Unique Hash Generation:
+		Once crafted, this sketch is converted into an image format, ensuring optimal digital compatibility.
+		Prior to storing on the server, the image undergoes a robust encryption process, safeguarding the user's unique visual password.
+		Image Verification using OpenCV:
 
-		As users define their image sequence, the system, in the background, translates this sequence into a unique hash value. This value, representing the user's chosen sequence, is then stored securely in the database.
-		Simplified Login Process:
-
-		When logging in, users simply need to replicate their chosen image sequence. Given the visual nature of images, users often find this method more memorable and intuitive than traditional passwords.
+		At the authentication stage, users redraw their initial sketch on the canvas.
+		Python’s OpenCV module springs into action, comparing this fresh sketch with the stored, encrypted image from registration.
+		A stringent criterion has been set: only if the newly drawn image boasts an 80% or higher match with the original is the user authenticated, ensuring tight security.
 		Tech Stack:
 
-		The frontend elegantly displays the grid and captures user inputs using a combination of HTML, CSS, and JavaScript. In contrast, the backend, powered by PHP, efficiently processes the data, generates the hashes, and manages the database interactions.
-		In essence, the Image-Based Authentication System seamlessly merges usability with security. By anchoring the authentication process in visual memory, it not only simplifies user access but also offers a fresh, interactive approach to digital security. As cyber threats evolve, it's innovations like these that promise a safer, user-friendly digital future.`,
-	link: null,
-	urlname: "IBASIcons",
-	tools: ["HTML", "CSS", "JS", "Php"],
-	sourceCode: null,
+		The frontend, which presents the canvas and handles user interaction, is constructed using HTML, CSS, and JavaScript. In contrast, the backend, responsible for image processing, comparison, and storage, is efficiently managed by Python coupled with the OpenCV library.
+		To encapsulate, the Image Similarity Based Authentication System is a vanguard in digital access, blending the innate human proclivity for visuals with cutting-edge technology. As the digital landscape continues to expand, such intuitive and personalized systems herald a future where security is both stringent and user-friendly.`,
+		link: "https://anudeepkalitkar.github.io/Image-Based-Authentication-System-Signature/",
+		urlname: "IBASSimilarity",
+		tools: ["Python", "HTML", "CSS", "JS", "Php"],
+		sourceCode:
+			"https://github.com/anudeepkalitkar/Image-Based-Authentication-System-Signature",
+	
+
 };
 
 export { ProjectInfo };

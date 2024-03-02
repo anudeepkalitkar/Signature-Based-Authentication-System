@@ -1,0 +1,51 @@
+ .navbar-fixed {
+	background: #c2d9f0;
+	color: #000000;
+}
+.navbar .brand-logo {
+	padding-left: 10%;
+	background: inherit;
+	color: inherit;
+	display: flex;
+	align-items: center;
+	font-size: calc(100%), calc(100%);
+}
+@media screen and (max-width: 600px) {
+	.navbar .brand-logo {
+		font-size: calc(100%);
+	}
+}
+
+.navbar .sidenav-trigger {
+	background: inherit;
+	color: inherit;
+}
+.navbar .nav-item {
+	background: inherit;
+	color: inherit;
+	font-weight: bold;
+}
+
+.nav-item:hover {
+	transform: scale(1.5);
+}
+.switch label {
+	font: inherit;
+	color: inherit;
+}
+.nav-hero {
+	position: absolute;
+	border-radius: 50%;
+	top: 50%;
+	height: 100%;
+	width: auto;
+	transform: translateY(-50%);
+	margin-right: 10px;
+}
+
+.sidenav {
+	background: #c2d9f0;
+}
+.sidenav .nav-item {
+	color: inherit;
+}

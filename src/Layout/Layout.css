@@ -1,0 +1,14 @@
+
+
+.nonscrollable {
+	height: 100vh;
+	overflow: hidden;
+}
+.scrollable {
+	flex-grow: 1;
+	height: 80vh;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+
