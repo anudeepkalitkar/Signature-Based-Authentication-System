@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/Signature-Based-Authentication-System/static/css/main.274c1bef.css",
-    "main.js": "/Signature-Based-Authentication-System/static/js/main.e04a470b.js",
+    "main.js": "/Signature-Based-Authentication-System/static/js/main.d87d23d6.js",
     "static/js/453.b106674b.chunk.js": "/Signature-Based-Authentication-System/static/js/453.b106674b.chunk.js",
     "static/media/SBAS.webp": "/Signature-Based-Authentication-System/static/media/SBAS.be8fe05fb7b83e312a8c.webp",
     "index.html": "/Signature-Based-Authentication-System/index.html",
     "main.274c1bef.css.map": "/Signature-Based-Authentication-System/static/css/main.274c1bef.css.map",
-    "main.e04a470b.js.map": "/Signature-Based-Authentication-System/static/js/main.e04a470b.js.map",
+    "main.d87d23d6.js.map": "/Signature-Based-Authentication-System/static/js/main.d87d23d6.js.map",
     "453.b106674b.chunk.js.map": "/Signature-Based-Authentication-System/static/js/453.b106674b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.274c1bef.css",
-    "static/js/main.e04a470b.js"
+    "static/js/main.d87d23d6.js"
   ]
 }
