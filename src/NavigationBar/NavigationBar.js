@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import "./NavigationBar.css";
 import M from "materialize-css";
-import { ResumePath } from "../StaticInformation/AboutMeInfo";
 import { DisplayImage } from "../StaticInformation/ImagesInfo";
 import "../Layout/Layout.css";
 import { PortFolioURL } from "../StaticInformation/UrlLinkInfo";
+import { ProjectInfo } from "../StaticInformation/ProjectInfo";
+
 const NavigationBar = (props) => {
 	useEffect(() => {
 		let sidenav = document.querySelector(".sidenav");
@@ -19,6 +20,10 @@ const NavigationBar = (props) => {
 		<div>
 			<nav className="navbar z-depth-5">
 				<div className="navbar-fixed nav-wrapper">
+				<a href="/#/" class="brand-logo">
+						{ProjectInfo.title}
+					</a>
+
 					<a href="#!" data-target="mobile-nav" className="sidenav-trigger">
 						<i className="material-icons">menu</i>
 					</a>
